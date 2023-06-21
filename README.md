@@ -1,11 +1,11 @@
 # JavaScript Basics
 
 <div align="right">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo" width="150px">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Unofficial_JavaScript_logo.svg" alt="Unofficial JavaScript Logo" width="150px">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/WHATWG_JavaScript_logo.svg" alt="Unofficial JavaScript Logo" width="150px">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/JavaScript_unofficial_logo.svg" alt="Unofficial JavaScript Logo" width="150px">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Edinburghjs.svg" alt="Unofficial JavaScript Logo" width="150px">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo" width="155px">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Unofficial_JavaScript_logo.svg" alt="Unofficial JavaScript Logo" width="155px">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/WHATWG_JavaScript_logo.svg" alt="Unofficial JavaScript Logo" width="155px">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/JavaScript_unofficial_logo.svg" alt="Unofficial JavaScript Logo" width="155px">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Edinburghjs.svg" alt="Unofficial JavaScript Logo" width="155px">
   
  
   
