@@ -14,9 +14,15 @@ const firstName = "Pranjal";
 const lastName = "Singh";
 const middleName = "Pratap";
 console.log(firstName + " " + middleName + " " + lastName);
-*/
 
 const pranjalDob = 1999;
 const myname = "Pranjal";
 
 console.log(`${myname}'s age is ${2023 - pranjalDob} `);
+*/
+const pranjalDob = 1999;
+if (2023 - 1999 >= 18) {
+  console.log("Pranjal is elligible for driving 🚗");
+} else {
+  console.log("Pranjal is not elligible for driving 🚗");
+}
