@@ -26,7 +26,6 @@ if (2023 - 1999 >= 18) {
 } else {
   console.log("Pranjal is not elligible for driving 🚗");
 }
-*/
 
 // 20. Type Conversion and Coercion
 
@@ -36,3 +35,12 @@ console.log(Number(a) + "10");
 console.log(Number(a) + Number("10"));
 console.log(a - "10");
 console.log(a + Number("10"));
+*/
+//21. Truthy and Falsy Values
+
+let money;
+if (money) {
+  console.log("Money is defined");
+} else {
+  console.log("Money is undefined");
+}
