@@ -53,8 +53,20 @@ if (fav === 7) {
 } else {
   console.log("Mehh");
 }
-*/
+
 //24. Logical Operators
 const hasLicense = true;
 const hasGoodVison = false;
 console.log(hasGoodVison && hasGoodVison);
+*/
+const day = "monday";
+switch (day) {
+  case "monday":
+    console.log("Plan course structure");
+    break;
+  case "tuesday":
+    console.log("Plan course Videos");
+    break;
+  default:
+    console.log("Invalid");
+}
