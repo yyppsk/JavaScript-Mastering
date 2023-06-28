@@ -82,6 +82,3 @@ console.log(drink);
 console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`); 
 
 */
-
-//32. Activating Strict Mode
-"use strict";
