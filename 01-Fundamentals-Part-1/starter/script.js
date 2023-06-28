@@ -44,7 +44,6 @@ if (money) {
 } else {
   console.log("Money is undefined");
 }
-*/
 
 //22. Equality Operators: == vs. ===
 const fav = Number(prompt("What's your fav number?"));
@@ -54,3 +53,8 @@ if (fav === 7) {
 } else {
   console.log("Mehh");
 }
+*/
+//24. Logical Operators
+const hasLicense = true;
+const hasGoodVison = false;
+console.log(hasGoodVison && hasGoodVison);
