@@ -58,7 +58,7 @@ if (fav === 7) {
 const hasLicense = true;
 const hasGoodVison = false;
 console.log(hasGoodVison && hasGoodVison);
-*/
+
 const day = "monday";
 switch (day) {
   case "monday":
@@ -69,4 +69,14 @@ switch (day) {
     break;
   default:
     console.log("Invalid");
-}
+}*/
+//28. The Conditional (Ternary) Operator
+
+const age = 23;
+age >= 18
+  ? console.log("I can drink wine")
+  : console.log("I cannot drink wine");
+//Conver to a relatively smaller code
+const drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log(drink);
+console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
