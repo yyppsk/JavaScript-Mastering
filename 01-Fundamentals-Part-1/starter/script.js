@@ -69,7 +69,7 @@ switch (day) {
     break;
   default:
     console.log("Invalid");
-}*/
+}
 //28. The Conditional (Ternary) Operator
 
 const age = 23;
@@ -79,4 +79,9 @@ age >= 18
 //Conver to a relatively smaller code
 const drink = age >= 18 ? "wine 🍷" : "water 💧";
 console.log(drink);
-console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
+console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`); 
+
+*/
+
+//32. Activating Strict Mode
+"use strict";
