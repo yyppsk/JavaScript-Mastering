@@ -35,7 +35,7 @@ console.log(Number(a) + "10");
 console.log(Number(a) + Number("10"));
 console.log(a - "10");
 console.log(a + Number("10"));
-*/
+
 //21. Truthy and Falsy Values
 
 let money;
@@ -43,4 +43,14 @@ if (money) {
   console.log("Money is defined");
 } else {
   console.log("Money is undefined");
+}
+*/
+
+//22. Equality Operators: == vs. ===
+const fav = Number(prompt("What's your fav number?"));
+console.log(fav);
+if (fav === 7) {
+  console.log("Damn");
+} else {
+  console.log("Mehh");
 }
