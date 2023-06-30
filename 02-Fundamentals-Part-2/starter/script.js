@@ -46,7 +46,6 @@ function fruitProcessor(apples, oranges) {
   return juice;
 }
 console.log(fruitProcessor(5, 2));
-*/
 
 //function decaration
 function calcAge(birthYear) {
@@ -59,3 +58,28 @@ const calcAge = function (birthYear) {
 
 //arrow
 const calcAge = (birthYear) => 2037 - birthYear;
+
+// 39. Introduction to Arrays
+
+const friends = ["Michael", "Steve", "Peter"];
+console.log(friends);
+const year = new Array(1991, 1992, 1993);
+friends[2] = "Jay";
+console.log(friends);
+
+const lenReturned = friends.push("Peter"); //Returns length too
+console.log(friends);
+friends.unshift("John");
+console.log(friends);
+//Remove stuff use pop and returns popped element
+const popped = friends.pop();
+friends.shift(); //first removal and catch
+console.log("Popped Stuff " + popped);
+console.log(friends);
+console.log(friends.indexOf("Steve"));
+//ES6 Method
+console.log(friends.includes("Bob"));
+if (friends.includes("Jay")) {
+  console.log("You have a Jay");
+}
+*/
