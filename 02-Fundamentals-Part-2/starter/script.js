@@ -184,3 +184,11 @@ for (let i = 0; i < peter.length; i++) {
   console.log(peter[i]);
 }
 */
+//48. Nested for loops
+//49. The While loop
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolle a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+}
