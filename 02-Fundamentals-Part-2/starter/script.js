@@ -35,7 +35,7 @@ const yearUntilRetirement = (birthYear, firstName) => {
 };
 
 console.log(yearUntilRetirement(1999, "Jonas"));
-*/
+
 function cutFruitPieces(fruit) {
   return fruit * 4;
 }
@@ -46,3 +46,16 @@ function fruitProcessor(apples, oranges) {
   return juice;
 }
 console.log(fruitProcessor(5, 2));
+*/
+
+//function decaration
+function calcAge(birthYear) {
+  return 2037 - birthYear;
+}
+//expression
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+//arrow
+const calcAge = (birthYear) => 2037 - birthYear;
