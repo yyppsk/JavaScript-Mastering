@@ -82,4 +82,75 @@ console.log(friends.includes("Bob"));
 if (friends.includes("Jay")) {
   console.log("You have a Jay");
 }
+
+//42. Introduction to Objects
+const peterArray = [
+  "Peter",
+  "Parker",
+  2037 - 1991,
+  "teacher",
+  ["Mary Jane", "Harry Osbborn"],
+];
+//object literal syntax
+const peter = {
+  firstName: "Peter",
+  lastName: "Parker",
+  job: "SpiderMan",
+  friends: ["Mary Jane", "Harry Osbborn"],
+};
+console.log(peter);
+//43. Dot vs Bracket Notation
+console.log(peter.firstName);
+console.log(peter["job"]); //add any operation or expression too
+const nameKey = "Name";
+console.log(peter["first" + nameKey]); //any expression
+
+const interestedIn = prompt("Choose between firstName, lastName, job");
+console.log(peter.interestedIn); //undefined by .
+if (peter[interestedIn]) {
+  console.log(peter[interestedIn]);
+} else {
+  console.log("Wrong request!");
+}
+peter.location = "Queens, NY";
+peter["Team"] = "Avengers";
+console.log(peter);
+//challange
+console.log(
+  `${peter["firstName"]} has ${peter["friends"].length} friends and his best friend is called ${peter.friends[1]}`
+);
 */
+const peter = {
+  firstName: "Peter",
+  lastName: "Parker",
+  birthYear: 1991,
+  job: "SpiderMan",
+  friends: ["Mary Jane", "Harry Osbborn"],
+  hasDriversLicense: true,
+  // calcAge: function (birthYear) {
+  //   //method
+  //   return 2037 - birthYear;
+  // },
+  // calcAge: function () {
+  //   return 2037 - this.birthYear;
+  // },
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} year old ${
+      this.job
+    }, he is an avenger${
+      this.hasDriversLicense
+        ? " and has a driver's license."
+        : " and doesn't have a driver's license."
+    }`;
+  },
+};
+console.log(peter.calcAge());
+console.log(peter.age);
+
+//challange summary
+//"Peter is a age year spiderman and he is an avenger, and has a driver's license";
+console.log(peter.getSummary());
