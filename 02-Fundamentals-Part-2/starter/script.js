@@ -119,7 +119,7 @@ console.log(peter);
 console.log(
   `${peter["firstName"]} has ${peter["friends"].length} friends and his best friend is called ${peter.friends[1]}`
 );
-*/
+
 const peter = {
   firstName: "Peter",
   lastName: "Parker",
@@ -154,3 +154,33 @@ console.log(peter.age);
 //challange summary
 //"Peter is a age year spiderman and he is an avenger, and has a driver's license";
 console.log(peter.getSummary());
+
+//46. Iteration: The for Loop
+
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights rep ${rep} 🏋️‍♀️🏋️‍♂️`);
+}
+
+//47. Looping Arrays, Breaking and Continuing
+
+const peter = [
+  "Peter",
+  "Parker",
+  2037 - 1991,
+  "Spiderman",
+  ["Mary Jane", "Harry Osbborn"],
+  true,
+];
+const types = [];
+
+for (let i = 0; i < peter.length; i++) {
+  //types[i] = typeof peter[i];
+  types.push(typeof peter[i]);
+}
+console.log("---Only Strings---");
+for (let i = 0; i < peter.length; i++) {
+  if (typeof peter[i] != "string") continue;
+  console.log(peter[i]);
+}
+*/
