@@ -17,6 +17,16 @@ Welcome to the JavaScript Basics repository! This repository serves as a compreh
 
 JavaScript is a powerful and versatile programming language that is primarily used for web development. It allows you to add dynamic and interactive elements to websites, making them more engaging and user-friendly. JavaScript is supported by all modern web browsers, making it a crucial tool for front-end web development.
 
+
+# Projects :
+## Guess My Number Game
+
+Welcome to the Guess My Number Game repository!
+
+Guess My Number is a simple interactive game where players try to guess a randomly generated number within a given range. In this particular implementation, the number to be guessed falls between 0 and 20. The game provides feedback to the player, indicating whether their guess is too high or too low, helping them narrow down the correct answer. The goal is to guess the number in the fewest attempts possible and achieve the highest score.
+
+To experience the game, please visit the [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/) website. Feel free to explore the code and contribute to the project to enhance its features and functionality. Happy guessing!
+
 ## Key Features of JavaScript
 
 - **Easy to Learn:** JavaScript has a syntax similar to other popular programming languages, such as Java and C, making it relatively easy to pick up for beginners.
