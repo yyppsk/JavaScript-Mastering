@@ -20,13 +20,30 @@ JavaScript is a powerful and versatile programming language that is primarily us
 
 # Projects :
 - [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
-## Guess My Number Game
+- [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
 
-Welcome to the Guess My Number Game repository!
+
+## [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
 
 Guess My Number is a simple interactive game where players try to guess a randomly generated number within a given range. In this particular implementation, the number to be guessed falls between 0 and 20. The game provides feedback to the player, indicating whether their guess is too high or too low, helping them narrow down the correct answer. The goal is to guess the number in the fewest attempts possible and achieve the highest score.
 
 To experience the game, please visit the [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/) website. Feel free to explore the code and contribute to the project to enhance its features and functionality. Happy guessing!
+
+
+## [Dice Roll Game](https://yyppsk.github.io/JavaScript-Mastering/07-Pig-Game/starter/)
+
+The Dice Roll Game is an interactive two-player game where each player takes turns rolling a die to accumulate points. The objective is to reach a total score of 50 points. Players can roll the dice multiple times, and each roll adds to their current score. However, if a player rolls a 1, their turn ends, and they lose their accumulated points for that turn. The game continues until one of the players reaches the target score of 50, resulting in victory. It's a fun and competitive game that tests luck and strategic decision-making.
+
+To experience the game, please visit the [Dice Roll Game](https://yyppsk.github.io/JavaScript-Mastering/07-Pig-Game/starter/) website. Feel free to explore the code and contribute to the project to enhance its features and functionality. Happy Rolling!
+<p align="center">
+  <img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/f341b1e5-82ea-4631-829d-4027e5e08592" width="15%">
+  <img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/db97d2ee-683f-49cf-812a-da3f682eeb8d" width="15%">
+  <img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/13555ebf-b0fb-4dd7-9121-200d87142fec" width="15%">
+  <img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/6232fd28-7d67-4b02-830d-81359503ae43" width="15%">
+  <img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/a08464c7-2fa6-4786-a7ed-86ce70cb3d1f" width="15%">
+  <img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/9939ebd5-ec7e-40e2-b875-c9b994a34a76" width="15%">
+</p>
+
 
 ## Key Features of JavaScript
 
