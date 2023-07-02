@@ -4,20 +4,35 @@ const score0El = document.querySelector('#score--0');
 const score1El = document.getElementById('score--1');
 const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
-const player0El = document.querySelector('.player--1');
-const player1El = document.querySelector('.player--2');
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
 
 //Elements in use
 const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
-
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
-
+let currentScore, activePlayer, playing, scores;
+let player1Name = prompt('Enter Player 1 Name');
+let player2Name = prompt('Enter Player 2 Name');
+const init = function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+  document.getElementById(`name--0`).textContent = player1Name;
+  document.getElementById(`name--1`).textContent = player2Name;
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  diceEl.classList.add('hidden');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+};
+init();
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
@@ -26,9 +41,6 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add('hidden');
 //ROLLING DIE FUNCTION
 btnRoll.addEventListener('click', function () {
   if (playing) {
@@ -63,12 +75,17 @@ btnHold.addEventListener('click', function () {
       diceEl.classList.add('hidden');
       document
         .querySelector(`.player--${activePlayer}`)
-        .classList.add('.player--winner');
+        .classList.add('player--winner');
+      document.getElementById(`name--${activePlayer}`).textContent = `${
+        activePlayer == 0 ? player1Name : player2Name
+      } Wins!🥇`;
       document
         .querySelector(`.player--${activePlayer}`)
-        .classList.remove('.player--active');
+        .classList.remove('player--active');
     } else {
       switchPlayer();
     }
   }
 });
+
+btnNew.addEventListener('click', init);
