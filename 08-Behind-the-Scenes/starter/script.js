@@ -88,3 +88,36 @@ const z = 3;
 console.log(x === window.x);
 console.log(x === window.y);
 console.log(x === window.z);
+
+//console.log(this); Window object
+const stuff = function (stuff) {
+  console.log(2037 - stuff);
+  console.log(this); //Regular function call is undefined in strict mode
+};
+
+stuff(2000);
+//In the Arrow function
+const stuffArrow = stuff => {
+  console.log(2037 - stuff);
+  console.log(this); //Arrow function call is Window in strict mode because it does not have its own this keyword, uses lexical stuff, window in this case
+};
+
+stuffArrow(2000);
+
+const pranjal = {
+  year: 1999,
+  stuffAge: function () {
+    console.log(this);
+  },
+};
+
+pranjal.stuffAge();
+
+const matilda = {
+  year: 2027,
+};
+matilda.stuffAge = pranjal.stuffAge;
+matilda.stuffAge(); //its own this stuff
+
+const f = pranjal.stuffAge;
+//if f(); then undefined this
