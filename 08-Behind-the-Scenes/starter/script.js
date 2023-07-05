@@ -40,3 +40,51 @@ const firstName = 'Pranjal';
 calcAge(1999);
 //console.log(age) //Outer Scope, child scope can not be accessed here
 //printAge(); //Nope, same with this
+
+//Hoisting and TDZ with Variables
+// console.log(me);
+// console.log(job);
+// console.log(year);
+
+// var me = 'Pranjal';
+// let job = 'Engineer';
+// const year = 1991;
+
+//Function Hoisting
+
+console.log(addDecl(2, 3));
+// console.log(addExpr(2, 3));
+// console.log(addArrow(2, 3));
+//console.log(addArrow) -> Undefined
+//like calling undefine(2,3)
+function addDecl(a, b) {
+  return a + b;
+}
+//TDZ
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// const addArrow = (a, b) => a + b;
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// var addArrow = (a, b) => a + b;
+
+console.log(undefined); //-> a false value, triggers next line
+//declare all the functions first before using
+if (!numProducts) deleteShoppingCart();
+var numProducts = 10;
+//Example
+function deleteShoppingCart() {
+  console.log('All products deleted');
+}
+
+var x = 2;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(x === window.y);
+console.log(x === window.z);
