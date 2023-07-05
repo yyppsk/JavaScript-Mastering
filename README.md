@@ -20,7 +20,7 @@ JavaScript is a powerful and versatile programming language that is primarily us
 
 # Projects :
 - [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
-- [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
+- [Dice Roll Game](https://yyppsk.github.io/JavaScript-Mastering/07-Pig-Game/starter/)
 
 
 ## [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
