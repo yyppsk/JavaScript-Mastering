@@ -6,15 +6,30 @@ const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
-
+const btnCloseModal = document.querySelector('.close-modal');
 //Elements in use
 const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const pig = document.getElementById('pig');
+
+//Modal Stuff
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+
 let currentScore, activePlayer, playing, scores;
 let player1Name = prompt('Enter Player 1 Name');
 let player2Name = prompt('Enter Player 2 Name');
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
 const init = function () {
   scores = [0, 0];
   currentScore = 0;
@@ -76,9 +91,21 @@ btnHold.addEventListener('click', function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
+
       document.getElementById(`name--${activePlayer}`).textContent = `${
         activePlayer == 0 ? player1Name : player2Name
       } Wins!🥇`;
+      document.getElementById(`pig`).textContent = `Dear ${
+        activePlayer == 1 ? player1Name : player2Name
+      }! You are a pig!!!`;
+      console.log('User Won, Now calling -> ', openModal());
+      btnCloseModal.addEventListener('click', closeModal);
+      overlay.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
