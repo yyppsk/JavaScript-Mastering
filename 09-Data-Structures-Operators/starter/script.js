@@ -11,7 +11,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -27,3 +29,13 @@ const restaurant = {
     },
   },
 };
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+const nested = [2, 4, [5, 6]];
+const [i, j, [k, l]] = nested;
+console.log(i, j, k, l);
+
+//Default values
+
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r); //Generally used in APIs
