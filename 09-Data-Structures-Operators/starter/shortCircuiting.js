@@ -63,3 +63,6 @@ console.log(7 && 'Jonas');
 console.log('Hello' && 23 && null && 'Pranjal');
 //Try practically
 restaurant.orderPizza && orderPizza('Mushroom', 'Olives');
+
+//Nullish stuff (NOT 0 or ' ' are truish)
+const guestCorrect = restaurant.numGuests ?? 10;
