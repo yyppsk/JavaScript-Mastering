@@ -62,7 +62,21 @@ console.log(0 && 'Jonas');
 console.log(7 && 'Jonas');
 console.log('Hello' && 23 && null && 'Pranjal');
 //Try practically
-restaurant.orderPizza && orderPizza('Mushroom', 'Olives');
+// restaurant.orderPizza && orderPizza('Mushroom', 'Olives');
 
 //Nullish stuff (NOT 0 or ' ' are truish)
 const guestCorrect = restaurant.numGuests ?? 10;
+
+const rest1 = {
+  name: 'capri',
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Antonio',
+};
+
+rest1.numGuests ??= 10;
+rest2.owner = rest2.owner && 'Ann';
+console.log(rest1);
+console.log(rest2);
