@@ -43,3 +43,14 @@ const users = [
   },
 ];
 console.log(users[0]?.name ?? 'User array empty');
+
+//Traversing through object keys, values and entries
+const properties = Object.keys(openingHours);
+for (const day of properties) {
+  console.log(day);
+}
+//same for values
+
+for (const [i, { open, close }] of Object.entries(openingHours)) {
+  console.log(`On the ${i} we open at ${open} and close at ${close}`);
+}
