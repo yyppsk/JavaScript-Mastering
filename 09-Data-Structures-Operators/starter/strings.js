@@ -71,3 +71,45 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some Food and a pocket Knife');
 checkBaggage('Sock and camera');
 checkBaggage('Got some snacks and a gun for protection');
+
+//Join and split stuff
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Pranjal Singh'.split(' '));
+const [firstName, lastName] = 'Pranjal Singh'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const nameUpper = [];
+  for (const n of names) {
+    nameUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(nameUpper.join(' '));
+  //namesUpper.push(n.replace(n[0],n[0].toUpperCase()))
+};
+
+capitalizeName('pranjal pratap singh');
+capitalizeName('jessica jones');
+capitalizeName('robert downy jr.');
+
+//padding
+const message = 'Go to gate 23';
+console.log(message.padStart(25, '+'));
+console.log('Jonas'.padStart(25, '+'));
+
+//credit card example
+const maskCreditCard = function (number) {
+  const str = number + ''; //number of one operands of + sign is a string
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(4337875491288));
+console.log(maskCreditCard('333535888199'));
+
+//Repeat method
+
+const message2 = 'Bad weather... All Departures Delayed...';
+console.log(message2.repeat(5));
