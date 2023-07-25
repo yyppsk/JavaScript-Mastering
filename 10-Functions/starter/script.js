@@ -21,7 +21,7 @@ const createBooking = function (
 createBooking('LH123');
 createBooking('LH123', 2, 800);
 createBooking('LH123', 5);
-//
+//129. How Passing Arguments Works: Value vs. Reference
 
 const flight = 'LH234';
 const jonas = {
@@ -33,9 +33,24 @@ const checkIn = function (flightNum, passenger) {
   flightNum = 'LH999';
   passenger.name = 'Mr. ' + passenger.name;
 
-  if (passenger.passport === 2732882484) alert('Check i');
-  else alert('Wrong Passport');
+  //   if (passenger.passport === 2732882484) alert('Check i');
+  //   else alert('Wrong Passport');
 };
 checkIn(flight, jonas);
 console.log(flight);
 console.log(jonas);
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+const transformer = function (str, fn) {
+  console.log(`og : ${str}`);
+  console.log(`Transformed : ${fn(str)}`);
+  console.log(`og : ${fn.name}`);
+};
+transformer('Javascript is cool!', oneWord);
