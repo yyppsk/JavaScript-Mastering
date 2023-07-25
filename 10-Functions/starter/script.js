@@ -54,3 +54,17 @@ const transformer = function (str, fn) {
   console.log(`og : ${fn.name}`);
 };
 transformer('Javascript is cool!', oneWord);
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greetHey = greet('hey');
+greetHey('Pranjal');
+greet('hello')('Jonas');
+
+const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+const greetHey2 = greet2;
+greetHey2('hi')('ppsk');
