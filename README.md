@@ -36,7 +36,15 @@ To experience the game, please visit the [Guess My Number Game](https://yyppsk.g
 
 ## [Dice Roll Game](https://yyppsk.github.io/JavaScript-Mastering/07-Pig-Game/starter/)
 
+
 The Dice Roll Game is an interactive two-player game where each player takes turns rolling a die to accumulate points. The objective is to reach a total score of 50 points. Players can roll the dice multiple times, and each roll adds to their current score. However, if a player rolls a 1, their turn ends, and they lose their accumulated points for that turn. The game continues until one of the players reaches the target score of 50, resulting in victory. It's a fun and competitive game that tests luck and strategic decision-making.
+
+<table>
+  <tr>
+    <td><img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/b838328c-80f5-4dbc-a0e8-752d1870a6bb" alt="Image 1"></td>
+    <td><img src="https://github.com/yyppsk/JavaScript-Mastering/assets/69805496/6d512f55-77c5-4211-a806-ab8aeacc9266" alt="Image 2"></td>
+  </tr>
+</table>
 
 To experience the game, please visit the [Dice Roll Game](https://yyppsk.github.io/JavaScript-Mastering/07-Pig-Game/starter/) website. Feel free to explore the code and contribute to the project to enhance its features and functionality. Happy Rolling!
 <p align="center">
