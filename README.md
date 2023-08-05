@@ -8,7 +8,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Edinburghjs.svg" alt="Unofficial JavaScript Logo" width="160px">
 </div>
 
-Welcome to the JavaScript Basics repository! This repository serves as a comprehensive guide for beginners who are eager to learn the fundamentals of JavaScript. Whether you're new to programming or looking to expand your skills, this repository will provide you with a solid foundation in JavaScript.
+Welcome to the JavaScript repository! This repository serves as a comprehensive guide for beginners who are eager to learn the fundamentals of JavaScript. Whether you're new to programming or looking to expand your skills, this repository will provide you with a solid foundation in JavaScript. I have designed multiple projects in Javascript in this repository that are functional. :)
 
 ## What is JavaScript?
 
@@ -18,7 +18,7 @@ JavaScript is a powerful and versatile programming language that is primarily us
 # Projects :
 - [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
 - [Dice Roll Game](https://yyppsk.github.io/JavaScript-Mastering/07-Pig-Game/starter/)
-
+- More coming! 
 
 ## [Guess My Number Game](https://yyppsk.github.io/JavaScript-Mastering/05-Guess-My-Number/starter/)
 
