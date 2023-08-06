@@ -70,19 +70,17 @@ const displayMovements = function (movements) {
   containerMovements.innerHTML = '';
   //to make the stuff clear
   movements.forEach(function (mov, i) {
-    const type = mov > 0 ? `deposit` : `withdrawl`;
+    const type = mov > 0 ? `deposit` : `withdrawal`;
     const html = `
     <div class="movements__row">
           <div class="movements__type movements__type--${type}">${
       i + 1
-    } ${type}</div>
+    }${type}</div>
           <div class="movements__value">${mov}€</div>
     </div>`;
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-
-displayMovements(account1.movements);
 
 //Main Balance
 const calcDisplayBalance = function (movements) {
@@ -90,39 +88,70 @@ const calcDisplayBalance = function (movements) {
   labelBalance.textContent = `${balance}€`;
 };
 
-calcDisplayBalance(account1.movements);
 //Creating new usernames for each account object iteratively
+let iter = 1;
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
-    acc.username = acc.owner
-      .toLowerCase()
-      .split(' ')
-      .map(name => name[0])
-      .join('');
+    acc.username =
+      acc.owner
+        .toLowerCase()
+        .split(' ')
+        .map(name => name[0])
+        .join('') + `${iter++}`;
   });
 };
 createUsernames(accounts);
 
 //Sum In Balance & Sum Out
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((total, mov) => total + mov, 0);
   labelSumIn.textContent = `${incomes}€`;
 
-  const outgoing = movements
+  const outgoing = acc.movements
     .filter(mov => mov < 0)
     .reduce((total, mov) => total + mov, 0);
   labelSumOut.textContent = `${Math.abs(outgoing)}€`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .filter(int => int >= 1)
     .reduce((acc, interestStuff) => acc + interestStuff, 0);
   labelSumInterest.textContent = `${interest}€`;
 };
-calcDisplaySummary(account1.movements);
+
+//Event handler for Login
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  e.preventDefault();
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    //Display the whole setup with the message and stuff
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    containerApp.style.opacity = 100;
+    //clear the input fields after logging in
+
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
+    //Display Movements
+    displayMovements(currentAccount.movements);
+    //Display Balance
+    calcDisplayBalance(currentAccount.movements);
+    //Display Summary
+    calcDisplaySummary(currentAccount);
+  }
+});
+
 /////////////////////////////////////////////////
 //PRACTICE STUFF
 
@@ -133,7 +162,7 @@ const deposits = movements.filter(function (mov) {
 const withdrawls = movements.filter(mov => mov < 0);
 console.log(withdrawls);
 
-const balance = movements.reduce((acc, arr) => acc + curr, 0);
+//const balance = movements.reduce((acc, arr) => acc + curr, 0);
 
 const calcAge = function (data) {
   //Mapping stuff
