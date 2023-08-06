@@ -57,6 +57,7 @@ const btnTransfer = document.querySelector('.form__btn--transfer');
 const btnLoan = document.querySelector('.form__btn--loan');
 const btnClose = document.querySelector('.form__btn--close');
 const btnSort = document.querySelector('.btn--sort');
+const btnLogout = document.querySelector('.btn--logOut');
 
 const inputLoginUsername = document.querySelector('.login__input--user');
 const inputLoginPin = document.querySelector('.login__input--pin');
@@ -66,10 +67,15 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
+
+  //Sort the movements conditionally if user interacts
   //to make the stuff clear
-  movements.forEach(function (mov, i) {
+  const sortedMovement = sort
+    ? movements.slice().sort((a, b) => a - b)
+    : movements;
+  sortedMovement.forEach(function (mov, i) {
     const type = mov > 0 ? `deposit` : `withdrawal`;
     const html = `
     <div class="movements__row">
@@ -138,6 +144,7 @@ btnLogin.addEventListener('click', function (e) {
 
   inputTransferAmount.value = inputTransferTo.value = '';
 
+  //this if construct handles stuff that happens just after the user matches with correct credentials
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     //Display the whole setup with the message and stuff
 
@@ -147,6 +154,11 @@ btnLogin.addEventListener('click', function (e) {
 
     //Display Stuff UI
     containerApp.style.opacity = 100;
+    console.log(btnClose);
+    btnLogout.style.display = 'block';
+    inputLoginUsername.style.display = 'none';
+    inputLoginPin.style.display = 'none';
+    btnLogin.style.display = 'none';
 
     //clear the input fields after logging in
     inputLoginUsername.value = inputLoginPin.value = '';
@@ -208,6 +220,15 @@ btnClose.addEventListener('click', function (e) {
   inputCloseUsername.value = inputClosePin.value = '';
 });
 
+//State of Sort for each time we clicked
+let sorted = false;
+
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
 /////////////////////////////////////////////////
 //PRACTICE STUFF
 
@@ -234,3 +255,12 @@ const calcAge = function (data) {
   console.log(avg);
 };
 calcAge([5, 2, 4, 1, 15, 8, 3]);
+
+//Array from over the node list
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementsUI);
+});

@@ -74,7 +74,18 @@ nav {
   cursor: pointer;
   transition: all 0.3s;
 }
-
+.btn--logOut {
+  border: solid 0.5px rgba(95, 158, 160, 0.24);
+  border-radius: 8px;
+  width: 11rem;
+  height: 5rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 2rem;
+  background: none;
+  display: none;
+}
 .login__btn:hover,
 .login__btn:focus,
 .btn--sort:hover,
