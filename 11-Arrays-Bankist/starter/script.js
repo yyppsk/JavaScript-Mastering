@@ -125,23 +125,30 @@ const updateUi = function (currentAccountUI) {
   //Display Summary
   calcDisplaySummary(currentAccountUI);
 };
+
 //Event handler for Login
 let currentAccount;
 
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
+
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
+
   inputTransferAmount.value = inputTransferTo.value = '';
+
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     //Display the whole setup with the message and stuff
+
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(' ')[0]
     }`;
-    containerApp.style.opacity = 100;
-    //clear the input fields after logging in
 
+    //Display Stuff UI
+    containerApp.style.opacity = 100;
+
+    //clear the input fields after logging in
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
@@ -169,6 +176,38 @@ btnTransfer.addEventListener('click', function (e) {
     updateUi(currentAccount);
   }
 });
+
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  const loanAmount = Number(inputLoanAmount.value);
+  if (
+    loanAmount > 0 &&
+    currentAccount.movements.some(mov => mov >= loanAmount * 0.1)
+  ) {
+    currentAccount.movements.push(loanAmount);
+    //Update UI
+    updateUi(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    //Delete stuff
+    accounts.splice(index, 1);
+
+    containerApp.style.opacity = 0;
+  }
+  inputCloseUsername.value = inputClosePin.value = '';
+});
+
 /////////////////////////////////////////////////
 //PRACTICE STUFF
 
