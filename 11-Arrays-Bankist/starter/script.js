@@ -82,7 +82,7 @@ const displayMovements = function (movements, sort = false) {
           <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-          <div class="movements__value">${mov}€</div>
+          <div class="movements__value">${mov}₹</div>
     </div>`;
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
@@ -91,7 +91,7 @@ const displayMovements = function (movements, sort = false) {
 //Main Balance display and update it to account
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${acc.balance}€`;
+  labelBalance.textContent = `${acc.balance}₹`;
 };
 
 //Creating new usernames for each account object iteratively
@@ -108,19 +108,19 @@ const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((total, mov) => total + mov, 0);
-  labelSumIn.textContent = `${incomes}€`;
+  labelSumIn.textContent = `${incomes}₹`;
 
   const outgoing = acc.movements
     .filter(mov => mov < 0)
     .reduce((total, mov) => total + mov, 0);
-  labelSumOut.textContent = `${Math.abs(outgoing)}€`;
+  labelSumOut.textContent = `${Math.abs(outgoing)}₹`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
     .map(deposit => (deposit * acc.interestRate) / 100)
     .filter(int => int >= 1)
     .reduce((acc, interestStuff) => acc + interestStuff, 0);
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumInterest.textContent = `${interest}₹`;
 };
 
 const updateUi = function (currentAccountUI) {
@@ -271,7 +271,7 @@ calcAge([5, 2, 4, 1, 15, 8, 3]);
 labelBalance.addEventListener('click', function () {
   const movementsUI = Array.from(
     document.querySelectorAll('.movements__value'),
-    el => Number(el.textContent.replace('€', ''))
+    el => Number(el.textContent.replace('₹', ''))
   );
   console.log(movementsUI);
 });
