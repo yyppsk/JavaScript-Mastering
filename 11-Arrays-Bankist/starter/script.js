@@ -229,6 +229,10 @@ btnSort.addEventListener('click', function (e) {
   sorted = !sorted;
 });
 
+btnLogout.addEventListener('click', function (e) {
+  e.preventDefault();
+});
+
 /////////////////////////////////////////////////
 //PRACTICE STUFF
 
