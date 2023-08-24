@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDE</title>
+    <link rel="stylesheet" href="practice.css" />
+    <!-- Load the Monaco Editor scripts and styles -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs/loader.js"></script>
+  </head>
+  <body>
+    <div class="ide-window">
+      <div class="code-area">
+        <div id="editor-container"></div>
+      </div>
+      <div class="output-area">
+        <ol id="output-lines"></ol>
+      </div>
+    </div>
+    <script>
+      // Callback function to initialize the Monaco Editor
+      function initMonaco() {
+        // Configure Monaco options
+        monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+          target: monaco.languages.typescript.ScriptTarget.ESNext,
+          allowNonTsExtensions: true,
+        });
+
+        // Create a Monaco Editor instance
+        var editor = monaco.editor.create(
+          document.getElementById('editor-container'),
+          {
+            value: 'console.log("Hello, world!");',
+            language: 'javascript',
+            theme: 'vs-dark', // or 'vs'
+          }
+        );
+        // Handle changes in the editor content
+        editor.onDidChangeModelContent(function (event) {});
+      }
+
+      // Load Monaco Editor
+      require.config({
+        paths: {
+          vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs',
+        },
+      });
+      require(['vs/editor/editor.main'], initMonaco);
+    </script>
+    <script src="./practice.js"></script>
+  </body>
+</html>
